@@ -1,0 +1,110 @@
+
+hospital=# select * from Patient;
+ patient_name | patient_age | gender
+--------------+-------------+--------
+ megha        |          24 | female
+ khana        |          11 | female
+ chetu        |          17 | male
+ yogi         |          65 | male
+(4 rows)
+
+
+hospital=# select * from Doctor;
+ doctor_id | doctor_name | doctor_specialization
+-----------+-------------+-----------------------
+         1 | Dr Singh    | Cardiology
+         2 | Dr Reddy    | Neurology
+         3 | Dr Patel    | Orthopedics
+         4 | Dr Gupta    | Pediatrics
+         5 | Dr Kumar    | Oncology
+(5 rows)
+
+
+hospital=# select * from Appointment;
+ERROR:  relation "appointment" does not exist
+LINE 1: select * from Appointment;
+                      ^
+hospital=# select * from appointment;
+ERROR:  relation "appointment" does not exist
+LINE 1: select * from appointment;
+                      ^
+hospital=# select * from Appointments;
+ patient_name | doctor_id | appointment_date
+--------------+-----------+------------------
+ megha        |         2 | 2024-05-12
+(1 row)
+
+
+hospital=# insert into Appointments(patient_name,doctor_id,appointment_date) values('khana',4,'2024-11-18');
+INSERT 0 1
+hospital=# insert into Appointments(patient_name,doctor_id,appointment_date) values('yogi',1,'2024-07-20');
+INSERT 0 1
+hospital=# insert into Appointments(patient_name,doctor_id,appointment_date) values('chetu',3,'2024-02-27');
+INSERT 0 1
+hospital=# select * from Appointments;
+ patient_name | doctor_id | appointment_date
+--------------+-----------+------------------
+ megha        |         2 | 2024-05-12
+ khana        |         4 | 2024-11-18
+ yogi         |         1 | 2024-07-20
+ chetu        |         3 | 2024-02-27
+(4 rows)
+
+
+hospital=# select * from Patient;
+ patient_name | patient_age | gender
+--------------+-------------+--------
+ megha        |          24 | female
+ khana        |          11 | female
+ chetu        |          17 | male
+ yogi         |          65 | male
+ madhu        |          22 | female
+(5 rows)
+
+
+hospital=# select * from Appointments;
+ patient_name | doctor_id | appointment_date
+--------------+-----------+------------------
+ megha        |         2 | 2024-05-12
+ khana        |         4 | 2024-11-18
+ yogi         |         1 | 2024-07-20
+ chetu        |         3 | 2024-02-27
+ madhu        |         4 | 2024-11-03
+(5 rows)
+
+
+hospital=# select * from Patient;
+ patient_name | patient_age | gender
+--------------+-------------+--------
+ megha        |          24 | female
+ khana        |          11 | female
+ chetu        |          17 | male
+ yogi         |          65 | male
+ madhu        |          22 | female
+ pavan        |          38 | male
+(6 rows)
+
+
+hospital=# select * from Appointments;
+ patient_name | doctor_id | appointment_date
+--------------+-----------+------------------
+ megha        |         2 | 2024-05-12
+ khana        |         4 | 2024-11-18
+ yogi         |         1 | 2024-07-20
+ chetu        |         3 | 2024-02-27
+ madhu        |         4 | 2024-11-03
+ pavan        |         5 | 2024-01-21
+(6 rows)
+
+
+hospital=# select * from Appointments;
+ patient_name | doctor_id | appointment_date
+--------------+-----------+------------------
+ megha        |         2 | 2024-05-12
+ khana        |         4 | 2024-11-18
+ yogi         |         1 | 2024-07-20
+ chetu        |         3 | 2024-02-27
+ madhu        |         4 | 2024-11-03
+ pavan        |         5 | 2024-01-21
+ khana        |         1 | 2024-02-07
+(7 rows)
